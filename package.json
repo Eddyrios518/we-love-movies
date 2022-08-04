@@ -5,7 +5,7 @@
     "node": "12.13.0"
   },
   "description": "zid-be-project-movie-01-qualified",
-  "main": "server.js", 
+  "main": "src/app.js",
   "scripts": {
     "docker:build": "docker image build . -t thinkful-ed/zid-be-project-movie-01-qualified",
     "docker:run": "docker run --rm -it -p 5000:5000 thinkful-ed/zid-be-project-movie-01-qualified",
@@ -16,9 +16,7 @@
     "reset": "npm run rollback && npm run migrate && npm run seed",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
-    "start": "node server",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
+    "start": "node src/server.js",
     "start:dev": "nodemon src/server.js",
     "start:solution": "docker-compose up --build",
     "test": "jest",
